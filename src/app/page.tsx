@@ -26,6 +26,10 @@ export default function Home() {
       setIsInvalidLink(false);
       const videoID = getVideoID(inputValue);
       const response = await fetch(`http://localhost:3500/download/${videoID}/info`);
+      if(response.status === 404) {
+        setIsInvalidLink(true);
+        throw new Error('Vídeo not found');
+      }
       const videoInfo = await response.json();
       
       videoInfo.videoID = videoID;
