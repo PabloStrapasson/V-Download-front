@@ -1,7 +1,9 @@
 import React from 'react'
 
-export default function footer() {
+export default function Footer() {
   return (
-    <div>footer</div>
+    <section className='flex justify-center items-center h-30 bg-(--footer-background) text-(--footer-text)'>
+      &copy; 2025 V-Download
+    </section>
   )
 }

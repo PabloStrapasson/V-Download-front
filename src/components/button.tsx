@@ -9,28 +9,27 @@ interface ButtonProps {
 
 export default function Button({onClick}: ButtonProps) {
 
-  //const [buttonText, setButtonText] = useState('Download');
+  const [buttonText, setButtonText] = useState('Baixar');
   const [showImage, setShowImage] = useState(false);
 
   const handleClick = async (event: React.FormEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    //setButtonText('Buscando');
+    setButtonText('Baixando');
     setShowImage(true);
     await onClick(event);
     setShowImage(false);
-    //setButtonText('Download');
+    setButtonText('Baixar');
   };
 
   return (
     <div className='flex size-full justify-end mt-5'>
         <button 
-            className='flex w-50 h-10 p-3 border-2 border-black rounded-sm items-center justify-center cursor-pointer hover:bg-gray-200 hover:text-black' 
+            className='flex w-50 h-10 p-3 items-center justify-center cursor-pointer rounded-sm bg-(--button-color) text-(--button-color-text) hover:bg-(--button-color-hover) hover:text-(--button-color-hover-text)' 
             type='submit'
             onClick={handleClick}>
-            {/* {buttonText} */}
-            Download
+            <p className='text-lg'>{buttonText}</p>
             {showImage && (
-              <Image src="/icons/loading/loading2.png" className='ml-1 animate-spin-slow' alt="Loading" width={15} height={15}/>
+              <Image src="/loading.png" className='ml-1 animate-spin-slow' alt="Loading" width={15} height={15}/>
             )}
         </button>
     </div>

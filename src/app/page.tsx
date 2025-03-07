@@ -7,7 +7,7 @@ import InputLink from '@/components/inputLink';
 import { getVideoID } from '@/utils/getVideoID';
 import FormatModal from '@/components/formatModal';
 import VideoFormatList from '@/components/videoFormatList';
-import InvalidLink from '@/components/invalidLink';
+import InvalidLink from '@/components/errorsComponents/invalidLink';
 
 export default function Home() {
 
@@ -34,7 +34,7 @@ export default function Home() {
       setIsModalOpen(true);
       } catch (error) {
         setIsInvalidLink(true)
-      console.error('Erro ao buscar informações do vídeo:', error);
+        console.error('Error fetching video information:', error);
     }
   };
 
@@ -43,11 +43,11 @@ export default function Home() {
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <section className='flex items-center size-full'>
           <div>
-            <Image src="/icons/icon1/download1.png" className='ml-1' alt="Logo" width={150} height={150}/>
+            <Image src="/logo.png" className='ml-1' alt="Logo" width={200} height={200}/>
           </div>
           <div className='size-full h-full ml-2'>
-            <h1 className="text-4xl font-bold ">Video Downloader</h1>
-            <p>Baixe seus vídeos do YouTube de gratuitamente</p>
+            <h1 className='text-5xl font-bold text-(--main-text-color)'>V-Download</h1>
+            <p className='text-lg text-(--main-text-color)'>Baixe seus vídeos gratuitamente</p>
           </div>
         </section>
         <section>
@@ -67,3 +67,5 @@ export default function Home() {
     </div>
   );
 }
+
+//div flex flex-col
