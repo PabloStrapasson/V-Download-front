@@ -12,7 +12,11 @@ import InvalidLink from '@/components/errorsComponents/invalidLink';
 export default function Home() {
 
   const [inputValue, setInputValue] = useState('');
-  const [videoInfo, setVideoInfo] = useState({});
+  const [videoInfo, setVideoInfo] = useState({
+    title: '',
+    availableFormats: [],
+    videoID: ''
+  });
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isInvalidLink, setIsInvalidLink] = useState(false);
 
@@ -25,7 +29,8 @@ export default function Home() {
     try {
       setIsInvalidLink(false);
       const videoID = getVideoID(inputValue);
-      const response = await fetch(`http://localhost:3500/download/${videoID}/info`);
+      console.log(`${process.env.API_BASE_URL}`)
+      const response = await fetch(`${process.env.API_BASE_URL}${videoID}/info`);
       if(response.status === 404) {
         setIsInvalidLink(true);
         throw new Error('Vídeo not found');
@@ -71,5 +76,3 @@ export default function Home() {
     </div>
   );
 }
-
-//div flex flex-col
