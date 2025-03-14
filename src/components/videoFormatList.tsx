@@ -38,7 +38,6 @@ export default function VideoFormatList({videoInfo}: VideoFormatListProps) {
 
   const downloadVideo = async () => {
     const videoID = videoInfo.videoID;
-    console.log(videoID);
 
     const data = {
       title: videoInfo.title,
@@ -46,7 +45,7 @@ export default function VideoFormatList({videoInfo}: VideoFormatListProps) {
       itag: [selectedFormat,140]
     }
     try {
-      const response = await fetch(`http://localhost:3500/download/${videoID}`, {
+      const response = await fetch(`${process.env.API_BASE_URL}${videoID}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
