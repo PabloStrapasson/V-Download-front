@@ -29,7 +29,6 @@ export default function Home() {
     try {
       setIsInvalidLink(false);
       const videoID = getVideoID(inputValue);
-      console.log(`${process.env.API_BASE_URL}`)
       const response = await fetch(`${process.env.API_BASE_URL}${videoID}/info`);
       if(response.status === 404) {
         setIsInvalidLink(true);
