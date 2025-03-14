@@ -1,47 +1,47 @@
 @import "tailwindcss";
 
-@theme {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@theme {}
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* fonts */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  
+  /* colors */
+  --background: #FFFFFF;
+  --border-color: #000000; 
+  --main-text-color: #000000;
+
+  --button-color: #3A63A8;
+  --button-color-text: #FFFFFF;
+  --button-color-hover: #7CB8F2;
+  --button-color-hover-text: #FFFFFF;
+
+  --modal-background: #FFFFFF; 
+  --modal-backdrop: #DAD9D9; 
+
+  --error-modal-background: #FAF6D6; 
+  --error-modal-close: #C0B45E; 
+  --error-modal-text: #000000;
+
+  --footer-background: #2D4A7A;
+  --footer-text: #FFFFFF; 
 }
 
-/* @keyframes spin-pause {
-  0% {
-    transform: rotate(0deg);
-  }
-  11.11% {
-    transform: rotate(40deg);
-  }
-  22.22% {
-    transform: rotate(80deg);
-  }
-  33.33%{
-    transform: rotate(120deg);
-  }
-  44.44% {
-    transform: rotate(160deg);
-  }
-  55.55% {
-    transform: rotate(200deg);
-  }
-  66.66% {
-    transform: rotate(240deg);
-  }
-  77.77% {
-    transform: rotate(280deg);
-  }
-  88.88% {
-    transform: rotate(320deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-} */
+input[type="radio"] {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border: 2px solid var(--main-text-color);
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+input[type="radio"]:checked {
+  background-color: var(--button-color);
+}
 
 @keyframes spin-slow {
   0% {
@@ -56,7 +56,7 @@
   65% {
     transform: rotate(225deg);
   }
-  82.5% {
+  80% {
     transform: rotate(292.5deg);
   }
   100% {
@@ -65,33 +65,33 @@
 }
 
 .animate-spin-slow {
-  /* animation: spin-pause .5s cubic-bezier(0.5, 0.1, 0.5, 0.9) infinite; */
   animation: spin-slow 1.25s steps(24, end) infinite;
 }
-/*
-@keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
-.animate-spin-slow {
-  animation: spin-slow 1.5s linear infinite;
-}
-*/
-/*
+
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    --main-text-color: #D5D5D5;
+    --background: #050834;
+    
+    --modal-background: #050834;
+    --footer-background: #2D4A7A;
+
+    --input-border-color: #D5D5D5;
+    --input-background: #0C0E2A; 
+    --input-text-color: #D5D5D5;
+
+    --button-color: #3A63A8;
+    --button-color-hover: #7CB8F2;
+    --button-color-text: #D5D5D5;
+
+    --error-modal-background: #C6C08B;
+    --error-modal-close: #676135; 
+    --error-modal-text: #000000;
+  }    
 }
-*/
+
 body {
-  /*color: var(--foreground);*/
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
