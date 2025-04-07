@@ -13,7 +13,7 @@ export default function InputLink({ value, onChange }: InputLinkProps) {
             placeholder='Ex: https://www.youtube.com/watch?v=abcdefghijk'
             value={value}
             onChange={onChange}
-            className='w-150 h-10 p-3 border-2 border-(--input-border-color) rounded-sm text-(--main-text-color) bg-(--input-background)' 
+            className='w-70 h-8 md:w-150 md:h-10 p-3 border-2 border-(--input-border-color) rounded-sm text-(--main-text-color) bg-(--input-background)' 
         />
     </div>
   )

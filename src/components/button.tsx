@@ -22,12 +22,12 @@ export default function Button({onClick}: ButtonProps) {
   };
 
   return (
-    <div className='flex size-full justify-end mt-5'>
+    <div className='flex size-full mt-5 justify-center md:justify-end'>
         <button 
-            className='flex w-50 h-10 p-3 items-center justify-center cursor-pointer rounded-sm bg-(--button-color) text-(--button-color-text) hover:bg-(--button-color-hover) hover:text-(--button-color-hover-text)' 
+            className='flex w-30 md:w-50 h-10 p-3 items-center justify-center cursor-pointer rounded-sm bg-(--button-color) text-(--button-color-text) hover:bg-(--button-color-hover) hover:text-(--button-color-hover-text)' 
             type='submit'
             onClick={handleClick}>
-            <p className='text-lg'>{buttonText}</p>
+            <p className='text-sm md:text-lg'>{buttonText}</p>
             {showImage && (
               <Image src="/loading.png" className='ml-1 animate-spin-slow' alt="Loading" width={15} height={15}/>
             )}
