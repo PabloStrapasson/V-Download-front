@@ -66,12 +66,12 @@ export default function VideoFormatList({videoInfo}: VideoFormatListProps) {
   
   return (
     <div>
-      <h1 className="mb-4 text-lg font-bold text-(--main-text-color)">{videoInfo.title}</h1>
+      <h1 className="mb-4 text-md md:text-lg font-bold text-(--main-text-color)">{videoInfo.title}</h1>
       <form>
-        <p className="mb-3 text-lg text-(--main-text-color)">Selecione uma das opções abaixo:</p>
+        <p className="mb-3 text-md md:text-lg text-(--main-text-color)">Selecione uma das opções abaixo:</p>
         {videoInfo.availableFormats.map((format) => (
           <div key={format.itag}>
-            <label className="flex h-2 items-center text-(--main-text-color)">
+            <label className="flex h-2 items-center text-(--main-text-color) text-[14px] md:text-[16px]">
               <input
                 type="radio"
                 name="videoFormat"

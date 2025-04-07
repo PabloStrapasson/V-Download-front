@@ -51,11 +51,11 @@ export default function Home() {
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <section className='flex items-center size-full'>
           <div>
-            <Image src="/logo.png" className='ml-1' alt="Logo" width={200} height={200}/>
+            <Image src="/logo.png" className='ml-1 w-[100px] md:w-[150px]' alt="Logo" width={200} height={200}/>
           </div>
-          <div className='size-full h-full ml-2'>
-            <h1 className='text-5xl font-bold text-(--main-text-color)'>V-Download</h1>
-            <p className='text-lg text-(--main-text-color)'>Baixe seus vídeos gratuitamente</p>
+          <div className='size-[80%] md:size-full h-full ml-2'>
+            <h1 className='text-2xl md:text-5xl font-bold text-(--main-text-color)'>V-Download</h1>
+            <p className='text-sm md:text-lg text-(--main-text-color)'>Baixe seus vídeos gratuitamente</p>
           </div>
         </section>
         <section>
